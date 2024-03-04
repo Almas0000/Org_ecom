@@ -230,3 +230,45 @@ h4 {
          */
 
 /*  01. Header */
+header li a {
+  position: relative;
+}
+
+/* 01. Header
+            a. header-top */
+.header-top .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 0;
+}
+
+.header-top .wrapper ul {
+  gap: 3em;
+}
+
+.header-top li {
+  position: relative;
+}
+
+.header-top li span {
+  position: absolute;
+  top: -5px;
+  right: -23px;
+}
+
+.header-top ul ul {
+  position: absolute;
+  left: 0;
+  line-height: 2;
+  background-color: var(--light-bg-color);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  display: none;
+}
+
+.header-top li:hover ul {
+  display: block;
+}
+/* 01. Header
+            b. header-nav */
