@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        .container{
-            display: flex;
-            align-items: center;
-            width:300px;
-            height:300px;
-            border:2px solid red;
-        }
-        .box1{
-            border: 2px solid black;
-        }
+      .flex-container {
+        width: 800px;
+        border: 2px solid;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .flex-item {
+        /* The shorthand flex property */
+        /* flex: 1; */
+        /* Additional styling for demonstration */
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .nothing {
+        flex-grow: 1;
+        border: 2px solid red;
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="box1">1</div>
-        <div class="box1">2</div>
-        <div class="box1">3</div>
-        <div class="box1">3</div>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="nothing">kd</div>
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
     </div>
-</body>
+  </body>
 </html>

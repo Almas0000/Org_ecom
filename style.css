@@ -139,8 +139,8 @@ h4 {
 }
 
 .flexcol {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   gap: 1em;
 }
 
@@ -230,8 +230,11 @@ h4 {
          */
 
 /*  01. Header */
-header li a {
+header li > a {
+  display: flex;
   position: relative;
+  line-height: inherit;
+  transition: var(--trans-color);
 }
 
 /* 01. Header
@@ -259,16 +262,108 @@ header li a {
 
 .header-top ul ul {
   position: absolute;
+  top: 100%;
   left: 0;
   line-height: 2;
-  background-color: var(--light-bg-color);
+  background-color: var(--white-color);
   border: 1px solid var(--border-color);
-  padding: 8px;
   display: none;
+}
+.header-top ul ul li a {
+  font-size: 15px;
+  padding: 0.25em 1em;
 }
 
 .header-top li:hover ul {
   display: block;
 }
+.header-top .right .current {
+  background-color: var(--light-bg-color);
+}
 /* 01. Header
             b. header-nav */
+
+.logo {
+  position: relative;
+  font-size: 2em;
+  font-weight: var(--fw7);
+}
+.header-nav li .icon-small {
+  position: absolute;
+  top: 2px;
+  right: -20px;
+}
+.circle {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: red;
+}
+nav .mega {
+  position: absolute;
+  width: var(--percent100);
+  top: var(--percent100);
+  left: 0;
+  right: 0;
+  padding: 2.5em;
+  line-height: 2.5;
+  background-color: var(--light-bg-color);
+  display: none;
+  z-index: 100;
+}
+.header-nav .mega .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-nav li:hover .mega {
+  display: block;
+}
+.header-nav .left nav {
+  position: relative;
+}
+.header-nav .left ul {
+  gap: 2.5em;
+}
+.thumbnail,
+image {
+  position: relative;
+}
+.mega .flexcol {
+  flex: 1;
+  min-width: 180px;
+  padding-right: 2.5em;
+  margin-bottom: 1.5em;
+  z-index: 1;
+}
+.mega .flexcol.flexcol.products .media {
+  width: var(--percent100);
+  height: var(--percent100);
+  position: relative;
+}
+.mega .flexcol.products .text-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* media query */
+@media screen and (min-width: 922px) {
+  .container {
+    padding: 0 2em;
+  }
+  .desktop-hide {
+    display: none;
+  }
+  .mobile-hide {
+    display: block;
+  }
+  /* header nav */
+  .header-nav {
+    padding: 0;
+    margin: 0;
+  }
+}
