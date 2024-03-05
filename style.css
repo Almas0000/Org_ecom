@@ -242,8 +242,8 @@ header li > a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: var(--fw3);
-  padding: 0.5em 0;
+  padding: 1em 0;
+  margin-bottom: 4px;
 }
 .header-top .wrapper ul {
   gap: 3em;
@@ -255,10 +255,11 @@ header li > a {
 .header-top .wrapper ul ul {
   position: absolute;
   top: auto;
-  left: 0;
+  left: 2px;
   background: var(--white-color);
   border: 1px solid var(--border-color);
   display: none;
+  z-index: 1000;
 }
 .header-top li:hover ul {
   display: block;
@@ -278,20 +279,50 @@ header li > a {
 .header-nav ul {
   gap: 3em;
 }
-
+.logo {
+  position: relative;
+  font-size: 2em;
+  font-weight: var(--fw8);
+  margin-right: 40px;
+  bottom: 8px;
+}
+.circle {
+  position: absolute;
+  top: -12px;
+  left: -9px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  opacity: 0.8;
+}
+.fly-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  font-size: var(--font-small);
+  position: relative;
+  bottom: 13px;
+  left: 4px;
+  padding: 1px 2px;
+  border-radius: 3px;
+  color: white;
+}
 .header-nav .mega {
   position: absolute;
   left: 0;
   width: var(--percent100);
   background: var(--light-bg-color);
   height: auto;
-  padding: 1.5em;
+  padding: 1em 1.5em;
   border-bottom: 1px solid var(--border-color);
   top: auto;
   z-index: 100;
-  /* display: none; */
+  display: none;
 }
-.header-nav li:hover .mega {
+.header-nav nav li:hover .mega {
   display: block;
 }
 .header-nav .mega .flexcol {
@@ -302,35 +333,35 @@ header li > a {
   font-size: var(--font-small);
   line-height: 2em;
 }
-.header-nav .mega .flexcol.products {
+
+.header-nav nav .mega .products {
   position: relative;
 }
-.header-nav .mega .flexcol.products .text-content {
-  position: absolute;
-  top: auto;
-  bottom: 0px;
-  width: var(--percent100);
-  height: var(--percent100);
-  background: var(--gradient-color);
-  z-index: 100;
-
-}
-nav .mega .products .text-content {
+.header-nav nav .mega .products .text-content {
   line-height: initial;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 0.5em;
   margin-top: 0.5em;
   position: absolute;
+  left: 0;
   bottom: 4em;
   width: var(--percent100);
+  /* "Why do I have to specify the height? It's causing the image to overlap, and the hover effect isn't working on image." */
 }
 nav .mega .products .text-content h4 {
   font-size: 2em;
   text-align: center;
   color: var(--secondary-dark-color);
 }
+
+nav .mega .products .text-content .primary-button {
+  font-size: 1.15em;
+  padding: 0.1em 1em;
+}
+
 .primary-button,
 .secondary-button,
 .light-button {
@@ -364,6 +395,21 @@ nav .mega .products .text-content h4 {
 .light-button:hover {
   background-color: var(--secondary-dark-color);
   color: var(--white-color);
+}
+.header-nav .wrapper {
+  justify-content: space-between;
+}
+.header-nav .right .icon-large {
+  position: relative;
+}
+.header-nav .right .fly-item {
+  background: var(--secondary-dark-color);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  top: -13px;
+  font-size: var(--font-small);
 }
 
 /* 16. Responsive */
