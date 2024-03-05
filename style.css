@@ -228,3 +228,150 @@ h4 {
          15. Modal
          16. Responsive
          */
+
+/* 01. Header */
+header li > a {
+  display: flex;
+  align-items: center;
+  line-height: inherit;
+}
+
+/* 01. Header
+   a. header-top */
+.header-top .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--fw3);
+  padding: 0.5em 0;
+}
+.header-top .wrapper ul {
+  gap: 3em;
+  line-height: 1.9;
+}
+.header-top li {
+  position: relative;
+}
+.header-top .wrapper ul ul {
+  position: absolute;
+  top: auto;
+  left: 0;
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  display: none;
+}
+.header-top li:hover ul {
+  display: block;
+}
+.header-top li .current {
+  background: var(--border-color);
+}
+.header-top ul ul li a {
+  padding: 0.25em 1em;
+}
+
+/* 01. Header
+   b. header-nav */
+.header-nav {
+  border-bottom: 1px solid var(--border-color);
+}
+.header-nav ul {
+  gap: 3em;
+}
+
+.header-nav .mega {
+  position: absolute;
+  left: 0;
+  width: var(--percent100);
+  background: var(--light-bg-color);
+  height: auto;
+  padding: 1.5em;
+  border-bottom: 1px solid var(--border-color);
+  top: auto;
+  z-index: 100;
+  /* display: none; */
+}
+.header-nav li:hover .mega {
+  display: block;
+}
+.header-nav .mega .flexcol {
+  flex: 1;
+}
+.header-nav .mega .flexcol a {
+  padding: 0 0.25em;
+  font-size: var(--font-small);
+  line-height: 2em;
+}
+.header-nav .mega .flexcol.products {
+  position: relative;
+}
+.header-nav .mega .flexcol.products .text-content {
+  position: absolute;
+  top: auto;
+  bottom: 0px;
+  width: var(--percent100);
+  height: var(--percent100);
+  background: var(--gradient-color);
+  z-index: 100;
+
+}
+nav .mega .products .text-content {
+  line-height: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.5em;
+  position: absolute;
+  bottom: 4em;
+  width: var(--percent100);
+}
+nav .mega .products .text-content h4 {
+  font-size: 2em;
+  text-align: center;
+  color: var(--secondary-dark-color);
+}
+.primary-button,
+.secondary-button,
+.light-button {
+  font-size: var(--font-small);
+  padding: 0.9em 2em;
+  height: auto;
+  width: fit-content;
+  border-radius: 2em;
+  transition: var(--trans-background-color);
+}
+.primary-button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.primary-button:hover {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+.secondary-button {
+  background: var(--secondary-dark-color);
+  color: var(--white-color);
+}
+.secondary-button:hover {
+  background-color: var(--light-bg-color);
+  color: var(--secondary-dark-color);
+}
+.light-button {
+  background-color: var(--light-bg-color);
+}
+.light-button:hover {
+  background-color: var(--secondary-dark-color);
+  color: var(--white-color);
+}
+
+/* 16. Responsive */
+@media screen and (min-width: 922px) {
+  .mobile-hide {
+    display: block;
+  }
+  .container {
+    padding: 0 2em;
+  }
+}
