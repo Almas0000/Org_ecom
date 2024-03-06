@@ -193,8 +193,7 @@ h4 {
          01. Header
             a. header-top
             b. header-nav
-            c. header main, departments category
-            d. Search form
+            c. header main, departments category, Search form         
             e. Responsive Menu - off canvas
          02. Hero
             a. slider
@@ -333,8 +332,8 @@ header li > a {
   font-size: var(--font-small);
   line-height: 2em;
 }
-.header-nav .flexcol .view-all{
-  font-size:3em;
+.header-nav .flexcol .view-all {
+  font-size: 3em;
   font-weight: var(--fw7);
 }
 .header-nav nav .mega .products {
@@ -414,6 +413,126 @@ nav .mega .products .text-content .primary-button {
   top: -13px;
   font-size: var(--font-small);
 }
+/* 01. Header
+    c. header main, departments category */
+
+.header-main {
+  background-color: var(--secondary-dark-color);
+  padding: 1.5em 0;
+  margin-bottom: 2em;
+}
+.dpt-cat {
+  position: relative;
+  z-index: 10;
+}
+.dpt-cat .dpt-head {
+  position: relative;
+  width: 300px;
+  padding: 0.75em 1.5em;
+  background-color: var(--primary-color);
+  border-radius: 7px 7px 0 0;
+  color: var(--white-color);
+  cursor: pointer;
+  margin-bottom: -2.15em;
+}
+.dpt-cat .dpt-head .mini-text {
+  color: var(--white-color);
+}
+.dpt-cat .dpt-trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1.3em;
+  height: 60px;
+  width: 60px;
+}
+.dpt-menu > ul > li > a {
+  font-size: var(--font-small);
+  height: 46px;
+  align-items: center;
+}
+.dpt-menu .has-child:hover ul {
+  display: block;
+}
+.dpt-menu .has-child li a:hover {
+  text-decoration: underline;
+}
+/* depertment menu  */
+.dpt-menu {
+  position: absolute;
+  top: var(--percent100);
+  width: 300px;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-top: 0;
+  border-bottom: 0;
+}
+.dpt-menu > ul > li > a {
+  font-weight: var(--font-small);
+  padding: 0 1.5em;
+  border-bottom: 1px solid var(--border-color);
+}
+.dpt-menu .has-child:hover ul {
+  display: block;
+}
+.dpt-menu .has-child > ul,
+.dpt-menu .mega {
+  position: absolute;
+  top: 0;
+  left: var(--percent100);
+  width: var(--percent100);
+  height: auto;
+  min-height: var(--percent100);
+  padding: 1.5em;
+  font-size: var(--font-small);
+  line-height: 2.5em;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-top: 0;
+  display: none;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+/* showing the first sub menu  */
+.dpt-menu .mega {
+  display: none;
+}
+.dpt-menu .beauty ul {
+  background-image: url("assets/menu/menu_bg1.jpg");
+}
+
+.dpt-menu .electronic ul {
+  background-image: url("assets/menu/menu_bg2.jpg");
+}
+.dpt-menu .fashion ul {
+  background-image: url("assets/menu/menu_bg3.jpg");
+}
+.dpt-menu .homekit .mega {
+  background-image: url("assets/menu/menu_bg4.jpg");
+}
+.dpt-menu .has-child > :where(ul, .mega)::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+.dpt-menu .mega {
+  min-width: var(--percent100);
+  width: 600px;
+}
+.dpt-menu .has-child:hover .mega {
+  display: flex;
+}
+/* 01. Header
+    c. Search Form
 
 /* 16. Responsive */
 @media screen and (min-width: 922px) {
