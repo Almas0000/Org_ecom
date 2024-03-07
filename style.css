@@ -417,7 +417,6 @@ nav .mega .products .text-content .primary-button {
 /* 01. Header
     c. header main, departments category */
 /* from here start header-main only left side css */
-
 .header-main {
   background-color: var(--secondary-dark-color);
   padding: 1.5em 0;
@@ -532,6 +531,7 @@ nav .mega .products .text-content .primary-button {
 }
 /* this is end of hader-main left side css */
 /* from here start header-main only right side css */
+
 /* 01. Header
     c. Search Form
 */
@@ -539,12 +539,6 @@ nav .mega .products .text-content .primary-button {
   flex: 1;
   max-width: 700px;
   margin-left: auto;
-}
-
-/* 1. header
-        d. Search form*/
-.header-main .right {
-  flex: 1;
 }
 form {
   position: relative;
@@ -583,6 +577,51 @@ form.search button {
 }
 form.search button:hover {
   background: var(--secondary-dark-color);
+}
+/* end of header-main only right side css */
+/* from here start responsive of header */
+/* 01. Header        
+    e. Responsive Menu - off canvas */
+.site-off {
+  position: fixed;
+  width: 320px;
+  height: var(--percent100);
+  background: var(--white-color);
+  overflow-y: auto;
+  z-index: 1000;
+}
+.site-off .off-canvas {
+  width: var(--percent100);
+  height: var(--percent100);
+  touch-action: auto;
+  padding: 1.5em;
+}
+.site-off .canvas-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-dark-color);
+  color: var(--white-color);
+  padding: 1.5em;
+  margin: -0.1.5em -1.5em 1.5em;
+  border-bottom-right-radius: 160px 25px;
+}
+.off-canvas .canvas-head .logo .circle {
+  opacity: 0.9;
+}
+.t-close {
+  font-size: 1.25em;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--percent50);
+  background-color: var(--secondary-dark-color);
+  color: white;
+  transition: var(--trans-background-color);
+}
+.t-close:hover {
+  background-color: var(--white-color);
+  color: var(--secondary-dark-color);
+  opacity: 0.75;
 }
 
 /* 16. Responsive */
