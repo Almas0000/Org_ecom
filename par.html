@@ -1,90 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audio Message UI</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-  body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.audio-message {
-  display: flex;
-  align-items: center;
-  background-color: #DCF8C6;
-  border-radius: 16px;
-  padding: 10px;
-  max-width: 300px;
-}
-
-.profile-picture {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-image: url('profile-picture.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.audio-waveform {
-  flex-grow: 1;
-  height: 5px;
-  background: #34B7F1;
-  border-radius: 4px;
-  position: relative;
-}
-
-.audio-progress {
-  width: 50%;
-  height: 100%;
-  background: #34B7F1;
-  border-radius: 4px;
-}
-
-.play-button {
-  width: 15px;
-  height: 15px;
-  background: #34B7F1;
-  border: none;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  margin-right: 10px;
-}
-
-.timestamps {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  color: #666;
-}
-
-.checkmarks {
-  color: #34B7F1;
-  font-size: 18px;
-  margin-left: 10px;
-}
-
-</style>
-</head>
-<body>
-
-<div class="audio-message">
-  <div class="profile-picture"></div>
-  <div class="audio-waveform">
-    <div class="audio-progress"></div>
-  </div>
-  <button class="play-button"></button>
-  <div class="timestamps">
-    <span>1:27</span>
-    <span>11:12</span>
-  </div>
-  <div class="checkmarks">✓✓</div>
-</div>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .off-canvas .dpt-head {
+        font-size: var(--font-small);
+        padding: 1em;
+        margin-bottom: 1em;
+        align-items: center;
+        border-radius: 7px 7px 0 0;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="off-canvas">
+      <div class="canvas-head flexitem">
+        <div class="logo">
+          <a href="#"><span class="circle"></span>.Store</a>
+        </div>
+        <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
+      </div>
+      <div class="department"></div>
+      <nav></nav>
+      <div class="thetop-nav"></div>
+    </div>
+    <div class="dpt-cat">
+      <div class="dpt-head">
+        <div class="mini-text">All Products</div>
+        <div class="mini-text">Total 2033 products</div>
+        <a href="#" class="dpt-trigger mobile-hide"
+          ><i class="ri-menu-3-line ri-xl"></i>
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
+function copyMenu() {
+  // copy inside .dpt-cat to .department
+  const dptcategory = document.querySelector(".dpt-cat");
+  const departmentplace = document.querySelector(".department");
+  if (dptcategory && departmentplace) {
+    departmentplace.innerHTML = dptcategory.innerHTML;
+  }
+}

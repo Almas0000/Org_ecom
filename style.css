@@ -605,6 +605,7 @@ form.search button:hover {
   padding: 1.5em;
   margin: -0.1.5em -1.5em 1.5em;
   border-bottom-right-radius: 160px 25px;
+  margin-bottom: 1em;
 }
 .off-canvas .canvas-head .logo .circle {
   opacity: 0.9;
@@ -623,13 +624,16 @@ form.search button:hover {
   color: var(--secondary-dark-color);
   opacity: 0.75;
 }
-.off-canvas .dpt-head{
+.off-canvas .department .dpt-head {
+  font-size: 1.25em;
   font-size: var(--font-small);
-  padding:1em;
-  align-items: center;
-  border-radius:7px 7px 0 0;
-  background:var(--light-text-color);
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  border-radius: 7px 7px 0 0;
+  background: var(--secondary-dark-color);
 }
+
 
 /* 16. Responsive */
 @media screen and (min-width: 922px) {

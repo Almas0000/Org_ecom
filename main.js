@@ -1,7 +1,7 @@
 function copyMenu() {
   // copy inside .dpt-cat to .department
   const dptcategory = document.querySelector(".dpt-cat");
-  const departmentplace = document.querySelector(".department");
+  const departmentplace = document.querySelector(".off-canvas .department");
   if (dptcategory && departmentplace) {
     departmentplace.innerHTML = dptcategory.innerHTML;
   }
@@ -20,3 +20,4 @@ function copyMenu() {
     topNavPlace.innerHTML = topNav.innerHTML;
   }
 }
+copyMenu();
