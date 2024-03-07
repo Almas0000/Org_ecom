@@ -301,10 +301,11 @@ header li > a {
   justify-content: center;
   align-items: center;
   background: var(--primary-color);
-  font-size: var(--font-small);
+  font-size: 12px;
   position: relative;
   bottom: 13px;
   left: 4px;
+  height: 17px;
   padding: 1px 2px;
   border-radius: 3px;
   color: white;
@@ -415,6 +416,7 @@ nav .mega .products .text-content .primary-button {
 }
 /* 01. Header
     c. header main, departments category */
+/* from here start header-main only left side css */
 
 .header-main {
   background-color: var(--secondary-dark-color);
@@ -494,10 +496,7 @@ nav .mega .products .text-content .primary-button {
   background-repeat: no-repeat;
   background-size: auto;
 }
-/* showing the first sub menu  */
-.dpt-menu .mega {
-  display: none;
-}
+
 .dpt-menu .beauty ul {
   background-image: url("assets/menu/menu_bg1.jpg");
 }
@@ -531,8 +530,60 @@ nav .mega .products .text-content .primary-button {
 .dpt-menu .has-child:hover .mega {
   display: flex;
 }
+/* this is end of hader-main left side css */
+/* from here start header-main only right side css */
 /* 01. Header
     c. Search Form
+*/
+.header-main .right {
+  flex: 1;
+  max-width: 700px;
+  margin-left: auto;
+}
+
+/* 1. header
+        d. Search form*/
+.header-main .right {
+  flex: 1;
+}
+form {
+  position: relative;
+}
+form.search input {
+  border: 0;
+  outline: 0;
+  line-height: 3.25em;
+  padding: 0 7em 0 4em;
+  border: none;
+  width: var(--percent100);
+  border-radius: 7px;
+  font-size: 0.9em;
+  font-weight: var(--fw3);
+}
+form.search :where(span, button) {
+  position: absolute;
+  top: 0;
+  padding: 0.55em 1.5em;
+  font-size: 1em;
+  font-weight: var(--fw6);
+  color: var(--light-text-color);
+  height: var(--percent100);
+}
+form.search button {
+  border: 0;
+  outline: 0;
+  right: 0;
+  font-size: 0.875em;
+  font-weight: var(--fw6);
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 0 7px 7px 0;
+  cursor: pointer;
+  transition: var(--trans-backround-color);
+}
+form.search button:hover {
+  background: var(--secondary-dark-color);
+}
 
 /* 16. Responsive */
 @media screen and (min-width: 922px) {

@@ -1,37 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      .flex-container {
-        width: 800px;
-        border: 2px solid;
-        display: flex;
-        flex-wrap: wrap;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Message UI</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-      .flex-item {
-        /* The shorthand flex property */
-        /* flex: 1; */
-        /* Additional styling for demonstration */
-        padding: 20px;
-        margin: 10px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-      }
-      .nothing {
-        flex-grow: 1;
-        border: 2px solid red;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="flex-container">
-      <div class="nothing">kd</div>
-      <div class="flex-item">Item 1</div>
-      <div class="flex-item">Item 2</div>
-      <div class="flex-item">Item 3</div>
-    </div>
-  </body>
+.audio-message {
+  display: flex;
+  align-items: center;
+  background-color: #DCF8C6;
+  border-radius: 16px;
+  padding: 10px;
+  max-width: 300px;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url('profile-picture.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.audio-waveform {
+  flex-grow: 1;
+  height: 5px;
+  background: #34B7F1;
+  border-radius: 4px;
+  position: relative;
+}
+
+.audio-progress {
+  width: 50%;
+  height: 100%;
+  background: #34B7F1;
+  border-radius: 4px;
+}
+
+.play-button {
+  width: 15px;
+  height: 15px;
+  background: #34B7F1;
+  border: none;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  margin-right: 10px;
+}
+
+.timestamps {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: #666;
+}
+
+.checkmarks {
+  color: #34B7F1;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="audio-message">
+  <div class="profile-picture"></div>
+  <div class="audio-waveform">
+    <div class="audio-progress"></div>
+  </div>
+  <button class="play-button"></button>
+  <div class="timestamps">
+    <span>1:27</span>
+    <span>11:12</span>
+  </div>
+  <div class="checkmarks">✓✓</div>
+</div>
+
+</body>
 </html>
