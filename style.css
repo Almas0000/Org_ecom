@@ -623,6 +623,13 @@ form.search button:hover {
   color: var(--secondary-dark-color);
   opacity: 0.75;
 }
+.off-canvas .dpt-head{
+  font-size: var(--font-small);
+  padding:1em;
+  align-items: center;
+  border-radius:7px 7px 0 0;
+  background:var(--light-text-color);
+}
 
 /* 16. Responsive */
 @media screen and (min-width: 922px) {
