@@ -310,7 +310,22 @@ header li > a {
   border-radius: 3px;
   color: white;
 }
-.header-nav .mega {
+.header-nav .wrapper {
+  justify-content: space-between;
+}
+.header-nav .right .icon-large {
+  position: relative;
+}
+.header-nav .right .fly-item {
+  background: var(--secondary-dark-color);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  top: -13px;
+  font-size: var(--font-small);
+}
+.header-nav nav .mega {
   position: absolute;
   left: 0;
   width: var(--percent100);
@@ -398,21 +413,6 @@ nav .mega .products .text-content .primary-button {
 .light-button:hover {
   background-color: var(--secondary-dark-color);
   color: var(--white-color);
-}
-.header-nav .wrapper {
-  justify-content: space-between;
-}
-.header-nav .right .icon-large {
-  position: relative;
-}
-.header-nav .right .fly-item {
-  background: var(--secondary-dark-color);
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  left: -10px;
-  top: -13px;
-  font-size: var(--font-small);
 }
 /* 01. Header
     c. header main, departments category */
@@ -633,7 +633,6 @@ form.search button:hover {
   border-radius: 7px 7px 0 0;
   background: var(--secondary-dark-color);
 }
-
 
 /* 16. Responsive */
 @media screen and (min-width: 922px) {
