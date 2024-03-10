@@ -13,7 +13,7 @@
   <body>
     <div id="page" class="site page-home">
       <header>
-        <div class="header-top">
+        <div class="header-top mobile-hide">
           <div class="container">
             <div class="wrapper flexitem">
               <div class="left">
@@ -39,7 +39,6 @@
                       <li><a href="#">PKR</a></li>
                       <li><a href="#">INR</a></li>
                       <li><a href="#">CAD</a></li>
-                      <li><a href="#">EUR</a></li>
                     </ul>
                   </li>
                   <li>
@@ -52,7 +51,6 @@
                       <li><a href="#" class="current">English</a></li>
                       <li><a href="#">Urdu</a></li>
                       <li><a href="#">Hindi</a></li>
-                      <li><a href="#">Russian</a></li>
                       <li><a href="#">Spanish</a></li>
                     </ul>
                   </li>
@@ -64,138 +62,186 @@
         <!-- end of header-top -->
         <div class="header-nav">
           <div class="container">
-             <div class="wrapper flexitem">
-                <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
-                <div class="left flexitem">
-                   <div class="logo"><a href="#"><span class="circle"></span>.Store</a></div>
-                   <nav class="mobile-hide">
-                      <ul class="flexitem second-links">
-                         <li><a href="#">Home</a></li>
-                         <li><a href="#">Shop</a></li>
-                         <li class="has-child">
-                            <a href="#">Woman
-                               <div class="icon-small"><i class="ri-arrow-down-s-line"></i></div>
-                            </a>
-                            <!-- <div class="mega">
-                               <div class="container">
-                                  <div class="wrapper">
-                                     <div class="flexcol">
-                                        <div class="row">
-                                           <h4>Women's Clothing</h4>
-                                           <ul>
-                                              <li><a href="#">Dresses</a></li>
-                                              <li><a href="#">Tops</a></li>
-                                              <li><a href="#">Sweaters/Knits</a></li>
-                                              <li><a href="#">Jackets/Coats</a></li>
-                                              <li><a href="#">Blazers</a></li>
-                                              <li><a href="#">Denim</a></li>
-                                              <li><a href="#">Leggings/Pants</a></li>
-                                              <li><a href="#">Skirts/Shorts</a></li>
-                                              <li><a href="#">Accessories</a></li>                                                   
-                                           </ul>
-                                        </div>
-                                     </div>
-                                     <div class="flexcol">
-                                        <div class="row">
-                                           <h4>Jewelrt</h4>
-                                           <ul>
-                                              <li><a href="#">Accessories</a></li>
-                                              <li><a href="#">Bags</a></li>
-                                              <li><a href="#">Denim</a></li>
-                                              <li><a href="#">Jackets</a></li>
-                                              <li><a href="#">Polos</a></li>
-                                              <li><a href="#">Shirts/Blouses</a></li>
-                                              <li><a href="#">Shopper</a></li>
-                                              <li><a href="#">Sweaters</a></li>
-                                           </ul>
-                                        </div>
-                                     </div>
-                                     <div class="flexcol">
-                                        <div class="row">
-                                           <h4>Beauty</h4>
-                                           <ul>
-                                              <li><a href="#">Bath Accessories</a></li>
-                                              <li><a href="#">Beauty</a></li>
-                                              <li><a href="#">Hair Care</a></li>
-                                              <li><a href="#">Lipsticks</a></li>
-                                              <li><a href="#">Makeup</a></li>
-                                              <li><a href="#">Nail Care</a></li>
-                                              <li><a href="#">Skin Care</a></li>
-                                              <li><a href="#">Tools & Brushes</a></li>
-                                             
-                                           </ul> 
-                                        </div>
-                                     </div>
-                                     <div class="flexcol">
-                                        <div class="row">
-                                           <h4>Women-brands</h4>
-                                           <ul class="Woment-brands">
-                                              <li><a href="#">Bag/Purse</a></li>
-                                              <li><a href="#">Luggage</a></li>
-                                              <li><a href="#">Sunglasses</a></li>
-                                              <li><a href="#">Dresses</a></li>
-                                              <li><a href="#">Dresses</a></li>
-                                              <li><a href="#">Dresses</a></li>
-                                              <li><a href="#">Dresses</a></li>
-                                              <li><a href="#">Dresses</a></li>
-                                           </ul>
-                                           <a href="#" class="view-all">View all brands <i class="ri-arrow-right-line"></i></a>
-                                        </div>
-                                     </div>
-                                     <div class="flexcol products">
-                                        <div class="row">
-                                           <div class="media">
-                                              <div class="thumbnail object-cover">
-                                                 <a href="#"><img src="assets/products/apparel1.jpg" alt="">
-                                                 </a>
-                                              </div>
-                                           </div>
-                                           <div class="text-content">
-                                              <h4>Most Wanted!</h4>
-                                              <a href="#" class="primary-button">Order Now</a>
-                                           </div>
-                                        </div>
-                                     </div>
-                                  </div>
-                               </div>
-                            </div>                             -->
-                         </li>
-                         <li><a href="#">Men</a></li>
-                         <li>
-                            <a href="#">Sports
-                               <div class="fly-item"><span>New!</span></div>
-                            </a>
-                         </li>                              
-                      </ul>
-                   </nav>
+            <div class="wrapper flexitem">
+              <a href="#" class="trigger desktop-hide"
+                ><span class="i ri-menu-2-line"></span
+              ></a>
+              <div class="left flexitem">
+                <div class="logo">
+                  <a href="#"><span class="circle"></span>.Store</a>
                 </div>
-
-
-                <div class="right">
-                <ul class="flexitem second-links">
-                   <li class="mobile-hide">
-                      <a href="#" >
-                         <div class="icon-large"><i class="ri-heart-line"></i></div>
-                         <div class="fly-item"><span class="item-number">0</span></div>
+                <nav class="mobile-hide">
+                  <ul class="flexitem second-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li class="has-child">
+                      <a href="#"
+                        >Woman
+                        <div class="icon-small">
+                          <i class="ri-arrow-down-s-line"></i>
+                        </div>
                       </a>
-                   </li>
-                      
-                      <li><a href="#" class="iscart">
-                         <div class="icon-large">
-                            <i class="ri-shopping-cart-line"></i>
-                            <div class="fly-item"><span class="item-number">0</span></div>
-                         </div>
-                         <div class="icon-text">
-                            <div class="mini-text">Total</div>
-                            <div class="cart-total">s0.00</div>
-                         </div>
-                      </a></li>
-                   </ul>
-                </div>
-             </div>
+                      <div class="mega">
+                        <div class="container">
+                          <div class="wrapper">
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>Women's Clothing</h4>
+                                <ul>
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Tops</a></li>
+                                  <li><a href="#">Sweaters/Knits</a></li>
+                                  <li><a href="#">Jackets/Coats</a></li>
+                                  <li><a href="#">Blazers</a></li>
+                                  <li><a href="#">Denim</a></li>
+                                  <li><a href="#">Leggings/Pants</a></li>
+                                  <li><a href="#">Skirts/Shorts</a></li>
+                                  <li><a href="#">Accessories</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>Jewelrt</h4>
+                                <ul>
+                                  <li><a href="#">Accessories</a></li>
+                                  <li><a href="#">Bags</a></li>
+                                  <li><a href="#">Denim</a></li>
+                                  <li><a href="#">Jackets</a></li>
+                                  <li><a href="#">Polos</a></li>
+                                  <li><a href="#">Shirts/Blouses</a></li>
+                                  <li><a href="#">Shopper</a></li>
+                                  <li><a href="#">Sweaters</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>Beauty</h4>
+                                <ul>
+                                  <li><a href="#">Bath Accessories</a></li>
+                                  <li><a href="#">Beauty</a></li>
+                                  <li><a href="#">Hair Care</a></li>
+                                  <li><a href="#">Lipsticks</a></li>
+                                  <li><a href="#">Makeup</a></li>
+                                  <li><a href="#">Nail Care</a></li>
+                                  <li><a href="#">Skin Care</a></li>
+                                  <li><a href="#">Tools & Brushes</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="flexcol">
+                              <div class="row">
+                                <h4>Women-brands</h4>
+                                <ul class="women-brands">
+                                  <li><a href="#">Bag/Purse</a></li>
+                                  <li><a href="#">Luggage</a></li>
+                                  <li><a href="#">Sunglasses</a></li>
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Dresses</a></li>
+                                  <li><a href="#">Dresses</a></li>
+                                </ul>
+                                <a href="#" class="view-all"
+                                  >View all brands
+                                  <i class="ri-arrow-right-line"></i
+                                ></a>
+                              </div>
+                            </div>
+                            <div class="flexcol products">
+                              <div class="row">
+                                <div class="media">
+                                  <div class="thumbnail object-cover">
+                                    <a href="#">
+                                      <img
+                                        src="assets/products/apparel1.jpg"
+                                        alt=""
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
+                                <div class="text-content">
+                                  <h4>Most Wanted!</h4>
+                                  <a href="#" class="primary-button"
+                                    >Order Now</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li><a href="#">Men</a></li>
+                    <li>
+                      <a href="#"
+                        >Sports
+                        <div class="fly-item"><span>New!</span></div>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="right">
+                <ul class="flexitem second-links">
+                  <li class="mobile-hide">
+                    <a href="#">
+                      <div class="icon-large">
+                        <i class="ri-heart-line"></i>
+                      </div>
+                      <div class="fly-item">
+                        <span class="item-number">0</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="iscart">
+                      <div class="icon-large">
+                        <i class="ri-shopping-cart-line"></i>
+                        <div class="fly-item">
+                          <span class="item-number">0</span>
+                        </div>
+                      </div>
+                      <div class="icon-text">
+                        <div class="mini-text">Total</div>
+                        <div class="cart-total">s0.00</div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-       </div>
-       <!-- end of header-nav -->
+        </div>
+        <!-- end of header-nav -->
+        <div class="header-main mobile-hide">
+          <div class="container">
+            <div class="wrapper flexitem">
+              <div class="left">
+                <div class="dpt-cat">
+                  <div class="dpt-head">
+                    <div class="main-text">All Departments</div>
+                    <div class="mini-text mobile-hide">Total 7000 Products</div>
+                    <a href="" class="dpt-trigger mbile-hide">
+                      <i class="ri-menu-line"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+               <div class="search-box">
+                  <form action="" class="search">
+                     <span class="icon-large"><i class="ri-search-line"></i></span>
+                     <input type="search" placeholder="Search for products">
+                     <button type="submit">Search</button>
+                  </form>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
     </div>
   </body>
   <script src="main.js"></script>

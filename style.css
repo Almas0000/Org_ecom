@@ -39,8 +39,8 @@
 
 body {
   font-family: "Rubik", sans-serif;
-  font-size: 16px;
   font-weight: 400;
+  font-size: 16px;
   line-height: 1.4;
   color: var(--dark-color);
   background-color: var(--white-color);
@@ -61,7 +61,7 @@ ul {
 
 img {
   width: var(--percent100);
-  height: 100%;
+  height: var(--percent100);
   vertical-align: middle;
   object-fit: cover;
   border-radius: 5px;
@@ -174,15 +174,59 @@ h4 {
   display: none;
 }
 
-.object-cover {
+.object-cover img {
   object-fit: cover;
   width: var(--percent100);
   height: var(--percent100);
   display: block;
 }
+.products .media {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.primary-button,
+.secondary-button,
+.light-button {
+  font-size: var(--font-small);
+  padding: 0.9em 2em;
+  height: auto;
+  width: fit-content;
+  border-radius: 2em;
+  transition: var(--trans-background-color);
+}
+.primary-button {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+.primary-button:hover {
+  background: var(--dark-color);
+  color: var(--white-color);
+}
+.secondary-button {
+  background: var(--secondary-dark-color);
+  color: var(--white-color);
+}
+.secondary-button:hover {
+  background: var(--light-bg-color);
+  color: var(--secondary-color);
+}
+.light-button {
+  background: var(--light-bg-color);
+}
+.light-button:hover {
+  background: var(--secondary-dark-color);
+  color: var(--white-color);
+}
 
+.view-all {
+  font-size: var(--font-small);
+  display: flex;
+  gap: 1em;
+  transition: var(--trans-color);
+}
 .mini-text {
-  font-size: 15px;
+  font-size: var(--font-smaller);
   color: black;
 }
 
@@ -240,12 +284,10 @@ header li > a {
  *  a. header-top
    ---------------*/
 .header-top .wrapper {
-  font-size: var(--font-small);
   /* font-weight: var(--fw3); */
   justify-content: space-between;
   line-height: 42px;
 }
-
 .header-top ul {
   gap: 2em;
 }
@@ -279,12 +321,132 @@ header li > a {
  * 01. Header
  *  b. header-nav
    ---------------*/
+/* "Initially, we style the header-nav  for both the left and right sides, but we didn't include the women's mega menu on the left side. This is because we need to design it differently for mobile and desktop. For the mobile version, we need to use the .off-canvas div, and for desktop, we will style it when the screen width is greater than or equal to 922px. This is why we didn't edit it */
+.header-nav {
+  padding: 1.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid var(--border-color);
+}
 .trigger {
   font-size: 1.5em;
-  display:flex;
-  font-size:1.75em;
-  
+  display: flex;
+  font-size: 1.75em;
 }
+.logo a {
+  font-family: "Poppins";
+  font-size: 1.75em;
+  font-weight: var(--fw8);
+  position: relative;
+  padding: 0.75em;
+  display: flex;
+  margin-right: 2em;
+}
+.circle {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--percent50);
+  background-color: var(--light-bg-color);
+  z-index: 1;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--percent50);
+  background-color: var(--secondary-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0.5;
+}
+.header-nav nav > ul {
+  line-height: 100px;
+  gap: 2em;
+}
+.fly-item {
+  /* This design for golbaly because it will be used in many sections */
+  position: absolute;
+  height: 16px;
+  font-size: var(--font-smaller);
+  padding: 3px;
+  text-align: center;
+  line-height: 10px;
+  color: white;
+}
+nav .fly-item {
+  top: 50%;
+  margin-top: -24px;
+  width: 30px;
+  border-radius: 3px;
+  right: -32px;
+  background-color: var(--primary-color);
+}
+/* header-nav women mega  */
+.mega .flexcol {
+  flex: 1;
+  min-width: 180px;
+}
+/* Here is the end of header-nav of left side style*/
+/* from here we start header-nav of right side style */
+.header-nav .right {
+  position: relative;
+  margin-left: auto;
+}
+.header-nav .right .icon-large {
+  position: relative;
+}
+.header-nav .right .fly-item {
+  top: 0;
+  right: 17px;
+  width: 16px;
+  background: var(--secondary-dark-color);
+  border-radius: var(--percent50);
+}
+/* Here is the end of header-nav of right side style*/
+/* from here we start header-main of left side style */
+/* ----------------
+ * 01. Header
+ *  c. header-main
+   ---------------*/
+.header-main {
+  background: var(--secondary-dark-color);
+  padding: 1.5em 0em;
+  margin-bottom: 2em;
+}
+.dpt-cat {
+  position: relative;
+  z-index: 10;
+}
+.dpt-cat .dpt-head {
+  position: relative;
+  width: 300px;
+  padding: 0.75em 1.5em;
+  background: var(--primary-color);
+  border-radius: 7px 7px 0 0;
+  color: var(--white-color);
+  margin-bottom: -2.15em;
+}
+.dpt-cat .dpt-head .mini-text {
+  color: var(--light-bg-color);
+}
+.dpt-cat .dtp-head .trigger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1.3em;
+  height: 60px;
+  width: 60px;
+}
+/* from here we start header-main of right side style and right side noly contain search box div */
+/* ----------------
+ * 01. Header
+ *  c. header-main d.Search form
+   ---------------*/
 /* 15. Responsive */
 @media screen and (min-width: 922px) {
   .container {
@@ -295,5 +457,80 @@ header li > a {
   }
   .mobile-hide {
     display: block;
+  }
+  /* header-nav of left side and right side and women mega of left side*/
+  .logo a {
+    margin-right: 2em;
+  }
+  .header-nav {
+    padding: 0;
+    margin: 0;
+    border-bottom: 0;
+  }
+  .header-nav .right li > a {
+    margin-left: 1em;
+  }
+  /* this is the header-nav left side of mega menu */
+  nav .mega {
+    position: absolute;
+    width: var(--percent100);
+    height: auto;
+    top: auto;
+    left: 0;
+    right: 0;
+    padding: 2.5em;
+    line-height: 2em;
+    background-color: var(--light-bg-color);
+    box-shadow: rgb(0 0 0 / 20%) 0 30px 20px -30px;
+    z-index: 100;
+    display: none;
+  }
+  nav li.has-child:hover .mega {
+    display: block;
+  }
+  nav .mega .wrapper {
+    display: flex;
+  }
+  nav .mega h4 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+  nav .mega ul {
+    font-size: var(--font-small);
+  }
+  nav .mega .women-brands {
+    max-width: 180px;
+  }
+  nav .mega .view-all {
+    margin-top: 1em;
+  }
+  nav .mega .products {
+    flex: 2;
+    padding: 0;
+    align-items: center;
+    position: relative;
+  }
+  nav .mege .products .row {
+    width: var(--percent100);
+  }
+  nav .mega .products .media {
+    height: 400px;
+  }
+  nav .mega .products .text-content {
+    line-height: initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 0.5em;
+    position: absolute;
+    bottom: 4em;
+    width: var(--percent100);
+  }
+  nav .mega .products .text-content h4 {
+    font-size: 2em;
+    font-weight: var(--fw8);
+    text-align: center;
+    color: var(--secondary-dark-color);
   }
 }
