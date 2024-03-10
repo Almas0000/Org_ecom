@@ -268,19 +268,32 @@ header li > a {
   padding: 0.25em 1em;
 }
 
-.header-top  ul li .current {
+.header-top ul li .current {
   background-color: var(--border-color);
 }
 .header-top li:hover ul {
   display: block;
 }
 
+/* ----------------
+ * 01. Header
+ *  b. header-nav
+   ---------------*/
+.trigger {
+  font-size: 1.5em;
+  display:flex;
+  font-size:1.75em;
+  
+}
 /* 15. Responsive */
 @media screen and (min-width: 922px) {
-  .mobile-hide {
-    display: block;
-  }
   .container {
     padding: 0 2em;
+  }
+  .desktop-hide {
+    display: none;
+  }
+  .mobile-hide {
+    display: block;
   }
 }
