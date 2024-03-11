@@ -237,7 +237,8 @@ h4 {
          01. Header
             a. header-top
             b. header-nav
-            c. header main, departments category, Search form         
+            c. header main, departments category, 
+            d. Search form  this search form is define on header-main in right side      
             e. Responsive Menu - off canvas
          02. Hero
             a. slider
@@ -321,7 +322,7 @@ header li > a {
  * 01. Header
  *  b. header-nav
    ---------------*/
-/* "Initially, we style the header-nav  for both the left and right sides, but we didn't include the women's mega menu on the left side. This is because we need to design it differently for mobile and desktop. For the mobile version, we need to use the .off-canvas div, and for desktop, we will style it when the screen width is greater than or equal to 922px. This is why we didn't edit it */
+/* "Initially, we style the header-nav  for both the left and right sides, but we didn't include the women's mega menu on the left side. This is because we need to design it differently for mobile and desktop. For the mobile version, we need to use the .off-canvas div, and for desktop, we will style it in 922px media query. This is why we didn't edit it */
 .header-nav {
   padding: 1.5em;
   margin-bottom: 1.5em;
@@ -391,7 +392,7 @@ nav .fly-item {
   flex: 1;
   min-width: 180px;
 }
-/* Here is the end of header-nav of left side style*/
+/* Here is the end of header-nav of left side not full style*/
 /* from here we start header-nav of right side style */
 .header-nav .right {
   position: relative;
@@ -434,7 +435,7 @@ nav .fly-item {
 .dpt-cat .dpt-head .mini-text {
   color: var(--light-bg-color);
 }
-.dpt-cat .dtp-head .trigger {
+.dpt-cat .dpt-head .dpt-trigger {
   position: absolute;
   right: 0;
   top: 0;
@@ -442,11 +443,56 @@ nav .fly-item {
   height: 60px;
   width: 60px;
 }
+.dpt-menu > ul > li > a {
+  font-size:var(--font-small);
+  height:45px;
+  align-items: center;
+}
 /* from here we start header-main of right side style and right side noly contain search box div */
 /* ----------------
  * 01. Header
- *  c. header-main d.Search form
+ *  d.Search form
    ---------------*/
+.header-main .right {
+  flex: 1;
+}
+form {
+  position: relative;
+}
+form.search input {
+  line-height: 3.25em;
+  padding: 0 7em 0 4.5em;
+  border: 0;
+  outline: 0;
+  width: var(--percent100);
+  border-radius: 7px;
+  font-size: 0.9em;
+  font-weight: var(--fw3);
+}
+form.search :where(span, button) {
+  position: absolute;
+  top: 0;
+  padding: 0.55em 1.5em;
+  font-size: 1em;
+  color: var(--light-text-color);
+  height: var(--percent100);
+}
+form.search button {
+  right: 0;
+  border: 0;
+  outline: 0;
+  font-size: 0.875em;
+  font-weight: var(--fw6);
+  background: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 0 7px 7px 0;
+  cursor: pointer;
+  transition: var(--trans-background-color);
+}
+form.search button:hover {
+  background-color: var(--dark-color);
+}
+
 /* 15. Responsive */
 @media screen and (min-width: 922px) {
   .container {
@@ -533,4 +579,28 @@ nav .fly-item {
     text-align: center;
     color: var(--secondary-dark-color);
   }
+  /* header-main right side  */
+  .header-main .right {
+    max-width: 600px;
+    margin-left: auto;
+  }
+  /* header-main left side Departments Menu and mega  */
+  .dpt-menu {
+    position: absolute;
+    top: var(--percent100);
+    width: 300px;
+    background: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    border-bottom: 0;
+  }
+  .dpt-menu > ul > li > a {
+    font-weight:var(--fw5);
+    padding:0 1.5em;
+    border-bottom:1px solid var(--border-color);
+  }
+  .dpt-menu > ul ,.dpt-menu .mega{
+    /* next work */
+  }
+
 }
