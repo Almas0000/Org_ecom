@@ -1,23 +1,17 @@
-// function copyMenu() {
-//   // copy inside .dpt-cat to .department
-//   const dptcategory = document.querySelector(".dpt-cat");
-//   const departmentplace = document.querySelector(".off-canvas .department");
-//   if (dptcategory && departmentplace) {
-//     departmentplace.innerHTML = dptcategory.innerHTML;
-//   }
+function copyMenu() {
+  // Copy inside .dpt-cat to .department
+  var departmentCategory = document.querySelector(".dpt-cat");
+  var departmentPlace = document.querySelector(".departments");
+  departmentPlace.innerHTML = departmentCategory.innerHTML;
 
-//   //copy inside nav to nav
-//   const mainNav = document.querySelector(".header-nav nav");
-//   const navPlace = document.querySelector(".off-canvas nav");
-//   if (mainNav && navPlace) {
-//     navPlace.innerHTML = mainNav.innerHTML;
-//   }
+  // Copy inside nav to nav
+  var mainNav = document.querySelector(".header-nav nav");
+  var navPlace = document.querySelector(".off-canvas nav");
+  navPlace.innerHTML = mainNav.innerHTML;
 
-//   //copy .header-top .wrapper to .thetop-nav
-//   const topNav = document.querySelector(".header-top .wrapper");
-//   const topNavPlace = document.querySelector("off-canvas .thetop-nav");
-//   if (topNav && topNavPlace) {
-//     topNavPlace.innerHTML = topNav.innerHTML;
-//   }
-// }
-// copyMenu();
+  // Copy .header-top .wrapper to .thetop-nav
+  var topNav = document.querySelector(".header-top .wrapper");
+  var topPlace = document.querySelector(".off-canvas .thetop-nav");
+  topPlace.innerHTML = topNav.innerHTML;
+}
+copyMenu();

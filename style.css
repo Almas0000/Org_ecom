@@ -275,7 +275,7 @@ h4 {
 /* ----------------
  * 01. Header
  * ---------------*/
-header li > a {
+:where(.off-canvas, header) li > a {
   display: flex;
   position: relative;
   line-height: inherit;
@@ -444,10 +444,11 @@ nav .fly-item {
   width: 60px;
 }
 .dpt-menu > ul > li > a {
-  font-size:var(--font-small);
+  font-size: var(--font-small);
   height: 45px;
   align-items: center;
 }
+
 .dpt-menu .has-child:hover ul {
   display: block;
 }
@@ -498,7 +499,89 @@ form.search button {
 form.search button:hover {
   background-color: var(--dark-color);
 }
-
+/* ----------------
+ * 01. Header
+ *  e. Responsive menu of canvas
+   ---------------*/
+.site-off {
+  position: fixed;
+  width: 320px;
+  height: var(--percent100);
+  background: var(--white-color);
+  overflow: auto;
+  z-index: 1000;
+}
+.off-canvas {
+  width: var(--percent100);
+  height: var(--percent100);
+  touch-action: auto;
+  padding: 1.5em;
+}
+.off-canvas .canvas-head {
+  color: var(--white-color);
+  justify-content: space-between;
+  padding: 1.5em;
+  margin: -1.5em -1.5em 1.5em;
+  background: var(--secondary-dark-color);
+  border-bottom-right-radius: 160px 25px;
+}
+.off-canvas .canvas-head .logo {
+  position: relative;
+  z-index: 10;
+}
+.off-canvas .canvas-head .logo .circle {
+  opacity: 0.75;
+}
+.t-close {
+  font-size: 1.25em;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--percent50);
+  background: var(--secondary-dark-color);
+  color: var(--white-color);
+  transition: var(--trans-background-color);
+}
+.t-close:hover {
+  background: var(--white-color);
+  color: var(--secondary-dark-color);
+  opacity: 0.75;
+}
+.off-canvas .dpt-head {
+  font-size: var(--font-small);
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  background: var(--light-bg-color);
+  border-radius: 7px 7px 0 0;
+}
+.off-canvas .has-child > :where(ul, .mega) {
+  font-size: var(--font-small);
+  font-weight: var(--fw3);
+  line-height: 28px;
+  padding-left: 3em;
+}
+.off-canvas .thetop-nav ul,
+.off-canvas nav > ul {
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: var(--font-small);
+  line-height: 36px;
+  padding-top: 1.25em;
+  border-top: 1px solid var(--border-color);
+}
+.off-canvas nav .mega {
+  padding: 0;
+}
+.off-canvas nav .mega .products {
+  display: none;
+}
+.off-canvas .has-child .icon-small {
+  padding: 0.5em;
+  line-height: initial;
+}
+.off-canvas .dpt-menu .icon-small i {
+  transform: rotate(90deg);
+}
 /* 15. Responsive */
 @media screen and (min-width: 922px) {
   .container {
