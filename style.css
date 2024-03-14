@@ -344,10 +344,10 @@ h4 {
 }
 .circle {
   position: absolute;
-  top: -4px;
-  left: 0;
-  width: 38px;
-  height: 38px;
+  top: -2px;
+  left: 6px;
+  width: 33px;
+  height: 33px;
   border-radius: var(--percent50);
   background-color: var(--light-bg-color);
   z-index: 1;
@@ -355,8 +355,8 @@ h4 {
 .circle::before {
   content: "";
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 23px;
+  height: 23px;
   border-radius: var(--percent50);
   background-color: var(--secondary-color);
   top: 50%;
@@ -510,6 +510,16 @@ form.search button:hover {
   background: var(--white-color);
   overflow: auto;
   z-index: 1000;
+
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.4s, visibility 0.4s;
+  will-change: transform, visibility;
+}
+.showmenu .site-off {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.4s 0s, visibility 0s 0s;
 }
 .off-canvas {
   width: var(--percent100);
@@ -559,6 +569,15 @@ form.search button:hover {
   font-weight: var(--fw3);
   line-height: 28px;
   padding-left: 3em;
+
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.off-canvas .expand > ul,
+.off-canvas .expand > .mega {
+  max-height: 2000px;
 }
 .off-canvas .thetop-nav ul,
 .off-canvas nav > ul {
@@ -602,6 +621,60 @@ form.search button:hover {
   padding: 0.5em;
   border: 1px solid var(--border-color);
   line-height: 0 0.5em 0.5em 0;
+}
+/* ----------------
+ * 02. Hero
+ *  a. Slider
+   ---------------*/
+/* .slider > div > .wrapper {
+  width: calc(100% - (300px +2em));
+  margin-left: auto;
+  these commint slider should be writen in 922px media query 
+} */
+.slider .item {
+  position: relative;
+  height: 474px;
+}
+.slider .item::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 450px;
+  height: 300px;
+  background-color: var(--white-color);
+  z-index: -1;
+  filter: blur(50px);
+  opacity: 0.8;
+}
+
+.slider .text-content {
+  position: relative;
+  height: var(--percent100);
+  justify-content: flex-end;
+  padding: 0 0 10% 10%;
+  z-index: 1;
+}
+
+.slider h4 {
+  font-size: var(--font-small);
+  font-weight: var(--fw7);
+  width: fit-content;
+  padding: 4px 10px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  border-radius: 4px;
+}
+.text-content :where(h2, h3) span:first-child {
+  font-weight: var(--fw3);
+  color: var(--light-text-color);
+}
+.text-content :where(h2, h3) span:last-child {
+  color: var(--secondary-dark-color);
+  letter-spacing: -1px;
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--secondary-dark-color);
 }
 /* 15. Responsive */
 @media screen and (min-width: 922px) {
@@ -761,5 +834,10 @@ form.search button:hover {
   }
   .dpt-menu .has-child:hover .mega {
     display: flex;
+  }
+  /* Slider */
+  .slider > div > .wrapper {
+    width: calc(100% - (300px +2em));
+    margin-left: auto;
   }
 }
