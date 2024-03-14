@@ -635,6 +635,12 @@ form.search button:hover {
   position: relative;
   height: 474px;
 }
+.slider .item .image {
+  width: var(--percent100);
+  height: var(--percent100);
+  object-fit: cover;
+  /* and here is some problem I have geven object-cover but it is not working for this is restyle her */
+}
 .slider .item::before {
   content: "";
   position: absolute;
@@ -643,16 +649,15 @@ form.search button:hover {
   width: 450px;
   height: 300px;
   background-color: var(--white-color);
-  z-index: -1;
+  z-index: 1;
   filter: blur(50px);
   opacity: 0.8;
 }
-
 .slider .text-content {
-  position: relative;
+  position: absolute;
+  top: 23%;
+  left: 6%;
   height: var(--percent100);
-  justify-content: flex-end;
-  padding: 0 0 10% 10%;
   z-index: 1;
 }
 
@@ -676,6 +681,23 @@ form.search button:hover {
 .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--secondary-dark-color);
 }
+/* ----------------
+ * 03. Brands
+   ---------------*/
+.brands .wrapper {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2em 0;
+}
+
+.brands .item img {
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+.brands .item a:hover img {
+  opacity: 1;
+}
+
 /* 15. Responsive */
 @media screen and (min-width: 922px) {
   .container {
@@ -837,7 +859,7 @@ form.search button:hover {
   }
   /* Slider */
   .slider > div > .wrapper {
-    width: calc(100% - (300px +2em));
+    width: calc(100% - (300px + 2em));
     margin-left: auto;
   }
 }
