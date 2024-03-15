@@ -114,12 +114,12 @@ h4 {
 }
 
 .column {
-  margin-left: -0.938em;
-  margin-right: -0.938em;
+  margin-left: -0.250em;
+  margin-right: -0.250em;
 }
 
 .column .row {
-  padding: 0 0.938em;
+  padding: 0 0.250em;
 }
 
 .flexwrap {
@@ -969,7 +969,7 @@ form.search button:hover {
     align-items: center;
     position: relative;
   }
-  nav .mege .products .row {
+  nav .mega .products .row {
     width: var(--percent100);
   }
   nav .mega .products .media {
