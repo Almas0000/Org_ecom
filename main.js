@@ -53,3 +53,13 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
   },
 });
+// show bottom menu search box
+const searchButton = document.querySelector(".t-search"),
+  tClose = document.querySelector(".search-close"),
+  showClass = document.querySelector(".site");
+searchButton.addEventListener("click", function () {
+  showClass.classList.toggle("showsearch");
+});
+tClose.addEventListener("click", function () {
+  showClass.classList.remove("showsearch");
+});
