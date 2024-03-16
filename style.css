@@ -1182,7 +1182,8 @@ form.search button:hover {
   }
   .products.mini,
   .banner .row,
-  .widgets .row {
+  .widgets .row,
+  .product-categories .row {
     flex: 0 0 50%;
   }
   .products.main .item {
