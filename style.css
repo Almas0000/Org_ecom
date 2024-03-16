@@ -114,12 +114,12 @@ h4 {
 }
 
 .column {
-  margin-left: -0.250em;
-  margin-right: -0.250em;
+  margin-left: -0.938em;
+  margin-right: -0.938em;
 }
 
 .column .row {
-  padding: 0 0.250em;
+  padding: 0 0.938em;
 }
 
 .flexwrap {
@@ -818,7 +818,7 @@ form.search button:hover {
   display: flex;
   flex-direction: column;
 }
-.products:where(.big, .main.one) .content {
+.products:where(.big, .main, .one) .content {
   gap: 1em;
   margin-top: 1.25em;
 }
@@ -833,6 +833,10 @@ form.search button:hover {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='rgba(240,187,64,1)'%3E%3Cpath d='M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z'%3E%3C/path%3E%3C/svg%3E");
   background-position-y: top;
   background-repeat: repeat-x;
+}
+/* to set stars width */
+.products .item :where(:nth-child(3), :nth-child(3)) .stars {
+  width: 64px;
 }
 .products h3 {
   font-family: "Rubik";
@@ -852,7 +856,7 @@ form.search button:hover {
   margin-right: 0.25em;
 }
 .products .price .normal {
-  color: var(--light-bg-color);
+  color: var(--light-text-color);
   text-decoration: line-through;
 }
 .products .stock .qty {
@@ -870,9 +874,17 @@ form.search button:hover {
   width: 21%;
   background-color: var(--secondary-color);
 }
+.danger-stock {
+  color: var(--primary-color);
+}
 .products .item {
   display: flex;
   position: relative;
+}
+.flexwrap .row {
+  flex: 0 0 100%;
+  width: 100%;
+  margin-bottom: 2em;
 }
 /* ----------------
  * 04. Products
@@ -901,10 +913,91 @@ form.search button:hover {
 .products:where(.mini, .main) h3 {
   font-weight: 400;
 }
+/* ----------------
+ * 04. Products
+ *  d. main products
+   ---------------*/
+.products.main .item {
+  flex-direction: column;
+  flex: 0 0 100%;
+  padding: 0 0.938em;
+  margin-bottom: 2em;
+}
+.products.main .media {
+  height: 390px;
+}
+.products.main .footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 1em 1em;
+  border-radius: 7px;
+  background: linear-gradient(
+    0deg,
+    var(--light-bg-color) 0%,
+    var(--white-color) 70%
+  );
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity;
+  transition: all 0.2s ease-in-out;
+}
+.products.main .item:hover .footer {
+  opacity: 1;
+  visibility: visible;
+}
+.products.main .footer ul {
+  list-style: disc;
+  padding: 1.25em 0 0 1.25em;
+  line-height: 1.8;
+  border-top: 1px solid var(--border-color);
+  margin-top: 145px;
+}
+.products.main .item:hover .content > *:not(.footer) {
+  z-index: 3;
+}
+/* ----------------
+ * 05. Banner 
+   ---------------*/
+.banners .item {
+  position: relative;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+}
+.banner .image {
+  text-align: right;
+}
+.banner .get-gray {
+  background-color: var(--border-color);
+}
+.banner :where(.text-content,.over-link){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--percent100);
+  height: var(--percent100);
+}
+.banner .text-content{
+  padding: 1.5em 2.5em;
+}
+
 /* 15. Responsive */
+@media screen and (min-width: 481px) {
+  .products.main .item {
+    flex: 0 0 50%;
+  }
+}
 @media screen and (min-width: 768px) {
   .products .price .current {
     font-size: 1.25em;
+  }
+  .products.mini,
+  .banner .row {
+    flex: 0 0 50%;
+  }
+  .products.main .item {
+    flex: 0 0 33.3333%;
   }
 }
 @media screen and (min-width: 922px) {
@@ -1060,7 +1153,7 @@ form.search button:hover {
   }
   .dpt-menu .mega {
     width: auto;
-    min-width: var(--percent100);
+    min-width: var(--pe rcent100);
   }
   .dpt-menu .has-child:hover .mega {
     display: flex;
@@ -1070,11 +1163,14 @@ form.search button:hover {
     width: calc(100% - (300px + 2em));
     margin-left: auto;
   }
-  /* product */
+  /* Products */
   .trending .products {
     flex: 0 0 33.3333%;
   }
   .products.big .media {
     max-height: 373px;
+  }
+  .products.main .item {
+    flex: 0 0 25%;
   }
 }
