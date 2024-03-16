@@ -226,7 +226,7 @@ h4 {
   transition: var(--trans-color);
 }
 .mini-text {
-  font-size: var(--font-smaller);
+  font-size: var(--font-small);
   color: black;
 }
 
@@ -1072,7 +1072,8 @@ form.search button:hover {
   transition: var(--trans-background-color);
 }
 .footer-info ul li a:hover {
-  background-color: var(--border-color);
+  background-color: var(--dark-color);
+  color: var(--white-color);
 }
 .footer-info .logo a {
   margin: 0 0 1em -0.75em;
