@@ -257,11 +257,12 @@ h4 {
             a. search
          07. Overlay
          08. Page single
-            a. breadcrumb
-            b. product detail
-            c. product description
-            d. product review
-            e. product review form
+            a. department menu
+            b. breadcrumb
+            c. product detail
+            d. product description
+            e. product review
+            f. product review form
          09. Page single: special offer
          01. Page category
             a. slidbar product filter
@@ -1171,6 +1172,23 @@ form.search button:hover {
   visibility: visible;
   opacity: 1;
 }
+/* ----------------
+ * 08. Page single
+   ---------------*/
+
+/* ----------------
+ * 08. Page single
+ *  a.department menu
+   ---------------*/
+.page-home .dpt-cat .dpt-trigger,
+.dpt-trigger .ri-close-line,
+.showdpt .dpt-trigger .ri-menu-3-line {
+  display: none;
+}
+.showdpt .dpt-trigger .ri-close-line {
+  display: block;
+}
+
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
   .products.main .item {
@@ -1372,4 +1390,6 @@ form.search button:hover {
     justify-content: space-between;
     align-items: center;
   }
+  /* 08. Page single */
+  
 }
