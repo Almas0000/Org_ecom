@@ -264,7 +264,7 @@ h4 {
             e. product review
             f. product review form
          09. Page single: special offer
-         01. Page category
+         10. Page category
             a. slidbar product filter
             b. head & product block
          11. Cart
@@ -1004,6 +1004,7 @@ form.search button:hover {
   font-size: var(--font-small);
   color: var(--light-text-color);
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 .banners .second-links {
   margin-bottom: 2em;
@@ -1188,6 +1189,25 @@ form.search button:hover {
 .showdpt .dpt-trigger .ri-close-line {
   display: block;
 }
+/* ----------------
+ * 08. Page single
+ *  b. breadcrumb
+   ---------------*/
+.breadcrumb {
+  font-size: var(--font-small);
+  margin-bottom: 2em;
+}
+.breadcrumb li:not(:last-child)::after {
+  content: "/";
+  padding: 0 0.35em;
+}
+.breadcrumb li:last-child {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: ellipsis;
+  color: var(--light-text-color);
+}
 
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
@@ -1338,11 +1358,11 @@ form.search button:hover {
   .dpt-menu .beauty ul {
     background-image: url(assets/menu/menu_bg1.jpg);
   }
-  .dpt-menu .electric ul {
-    background-image: url(assets/menu/menu_bg1.jpg);
+  .dpt-menu .electronic ul {
+    background-image: url(assets/menu/menu_bg2.jpg);
   }
   .dpt-menu .fashion ul {
-    background-image: url(assets/menu/menu_bg1.jpg);
+    background-image: url(assets/menu/menu_bg3.jpg);
   }
   .dpt-menu .homekit .mega {
     background-image: url(assets/menu/menu_bg4.jpg);
@@ -1391,5 +1411,11 @@ form.search button:hover {
     align-items: center;
   }
   /* 08. Page single */
-  
+  #page:not(.page-home) .dpt-menu {
+    display: none;
+  }
+
+  #page.showdpt .dpt-menu {
+    display: block;
+  }
 }
