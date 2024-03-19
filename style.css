@@ -1163,7 +1163,6 @@ form.search button:hover {
   height: var(--percent100);
   top: 0;
   left: 0;
-
   z-index: 999;
   background: rgba(0, 0, 0, 0.4);
   visibility: hidden;
@@ -1209,10 +1208,81 @@ form.search button:hover {
   color: var(--light-text-color);
 }
 
+/* ----------------
+ * 08. Page single
+ *  c. product details
+   ---------------*/
+.products.one .item {
+  flex-direction: column;
+}
+.products.one .price .discount {
+  font-size: 1em;
+  font-weight: var(--fw7);
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  padding: 1em;
+  z-index: 2;
+  background: var(--dark-color);
+  color: var(--white-color);
+  border-radius: var(--percent50);
+  margin: 0.5em;
+}
+.products.one :where(.big-image, .small-image) {
+  overflow: hidden;
+}
+.products.one .big-image {
+  position: relative;
+  margin-bottom: 1em;
+}
+.products.one:where(.big-image, .small-image) img {
+  object-fit: cover;
+  width: var(--percent100);
+  height: var(--percent100);
+  display: block;
+}
+.products.one .thumbnail-show {
+  position: relative;
+  width: 130px;
+  height: 110px;
+  overflow: hidden;
+  margin: 0 2em 2em 0;
+}
+.products.one :is(.swiper-button-next, .swiper-button-prev) {
+  outline: 0;
+  color: var(--secondary-dark-color);
+  transition: var(--trans-background-color), transform 0.3s;
+}
+.products .big-image:hover .swiper-button-next {
+  transform: translateX(10px);
+}
+.products .big-image:hover .swiper-button-prev {
+  transform: translateX(-10px);
+}
+.products
+  .big-image:hover
+  :is(.swiper-button-next, .swiper-button-prev)::after {
+  font-size: 1.5em;
+}
+.products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
+  background: var(--light-bg-color);
+}
+/* lightbox: go to fslightbox.com */
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
   .products.main .item {
     flex: 0 0 50%;
+  }
+  /* page single */
+  .products.one .big-image {
+    margin-bottom: 2em;
+  }
+  .products.one .image-show {
+    height: 680px;
+  }
+  .products.one .thumbnail-show {
+    height: 160px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1227,6 +1297,11 @@ form.search button:hover {
   }
   .products.main .item {
     flex: 0 0 33.3333%;
+  }
+  /* page-single */
+  .products.one .row {
+    flex: 0 0 50%;
+    width: 50%;
   }
 }
 @media screen and (min-width: 922px) {
@@ -1382,7 +1457,7 @@ form.search button:hover {
   }
   .dpt-menu .mega {
     width: auto;
-    min-width: var(--pe rcent100);
+    min-width: var(--percent100);
   }
   .dpt-menu .has-child:hover .mega {
     display: flex;

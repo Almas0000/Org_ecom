@@ -69,3 +69,30 @@ const dptButton = document.querySelector(".dpt-cat .dpt-trigger"),
 dptButton.addEventListener("click", function () {
   dptClass.classList.toggle("showdpt");
 });
+
+// the single page products image slider
+
+var productsThumb = new Swiper(".small-image", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 3, // Corrected typo (slidesPreView to slidesPerView)
+  freeMode: true,
+  watchSlidesProgress: true,
+  breakpoints: {
+    481: {
+      spaceBetween: 32,
+    },
+  },
+});
+
+var productBig = new Swiper(".big-image", {
+  loop: true,
+  autoHeight: true,
+  navigation: {
+    nextEl: ".swiper-button-next", // Corrected typo (nexEl to nextEl)
+    prevEl: ".swiper-button-prev", // Corrected typo (preEl to prevEl)
+  },
+  thumbs: {
+    swiper: productsThumb,
+  },
+});
