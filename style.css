@@ -1267,9 +1267,39 @@ form.search button:hover {
 }
 .products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
   background: var(--light-bg-color);
-}
+} 
 /* lightbox: go to fslightbox.com */
+/* ----------------
+ * 08. Page single
+ *  d. product description
+   ---------------*/
+.products.one .avialable {
+  font-size: var(--font-small);
+  font-weight: var(--fw5);
+  padding: 0.5em;
+  margin-right: 1em;
+  border-radius: 3px;
+  color: #10ac84;
+  background: var(--light-bg-color);
+}
+.products.one .add-review {
+  color: var(--dark-color);
+}
+.products.one .price {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.products.one .price .current {
+  font-size: 2.5em;
+}
+.products .variant form {
+  display: flex;
+}
+
 /* 15. Responsive */
+
 @media screen and (min-width: 481px) {
   .products.main .item {
     flex: 0 0 50%;
