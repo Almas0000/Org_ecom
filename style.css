@@ -1498,7 +1498,54 @@ form.search button:hover {
  * 08. Page single
  *  f.products  review form
    ---------------*/
+.review-form .rating {
+  flex-wrap: wrap;
+}
+.review-form p {
+  font-size: 1.25em;
+  margin-right: 1em;
+}
+.review-form .rate-this input {
+  display: none;
+}
+.review-form .rate-this label {
+  float: right;
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--secondary-dark-color);
+}
+.rate-this > input:checked ~ label,
+.rate-this:not(:checked) > label:hover,
+.rate-this:not(:checked) > label:hover ~ label {
+  color: #ffb503;
+}
 
+.rate-this > input:checked + label:hover,
+.rate-this > input:checked ~ label:hover,
+.rate-this > label:hover ~ input:checked ~ label,
+.rate-this > input:checked ~ label:hover ~ label {
+  color: #ffbc03;
+}
+.review-form form {
+  margin-bottom: 2em;
+}
+form p {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+form :where(input, textarea) {
+  outline: none;
+  line-height: 1;
+  padding: 1em;
+  border: 1px solid var(--border-color);
+  outline: 0;
+}
+form label {
+  font-weight: var(--fw5);
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
   .products.main .item {
@@ -1727,5 +1774,8 @@ form.search button:hover {
 
   #page.showdpt .dpt-menu {
     display: block;
+  }
+  .products.one .flexwrap > .row:last-child > .item {
+    padding-left: 2em;
   }
 }
