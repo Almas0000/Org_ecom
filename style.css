@@ -1403,6 +1403,8 @@ form.search button:hover {
   text-transform: uppercase;
   padding: 1em 1.25em;
   border-top: 1px solid var(--border-color);
+  gap: 1em;
+  align-items: flex-end;
 }
 
 .products .collapse .has-child > a::before {
@@ -1442,10 +1444,6 @@ form.search button:hover {
   content: "-";
 }
 
-/* ----------------
- * 08. Page single
- *  f. review form
-   ---------------*/
 .products .reviews h4 {
   font-size: 2em;
   color: var(--light-text-color);
@@ -1485,10 +1483,21 @@ form.search button:hover {
   padding-bottom: 2.5em;
   margin-top: 3.5em;
 }
-.products .review-block-body :where(.person,.review-title){
+.products .review-block-body :where(.person, .review-title) {
   font-weight: var(--fw7);
-  text-transform:uppercase;
+  text-transform: uppercase;
 }
+.products .review-block-body :where(.review-title, .view-all) {
+  font-size: 1.25em;
+  justify-content: end;
+}
+.products .review-block-body .item:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+/* ----------------
+ * 08. Page single
+ *  f.products  review form
+   ---------------*/
 
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
@@ -1523,6 +1532,11 @@ form.search button:hover {
   .products.one .row {
     flex: 0 0 50%;
     width: 50%;
+  }
+  .products.one .is_sticky,
+  .is_sticky {
+    position: sticky;
+    top: 2em;
   }
 }
 @media screen and (min-width: 922px) {
