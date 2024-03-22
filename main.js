@@ -96,3 +96,11 @@ var productBig = new Swiper(".big-image", {
     swiper: productsThumb,
   },
 });
+//stock products bar width percentage
+var stocks = document.querySelectorAll('.stock.mini-text');
+for (let x = 0; x < stocks.length; x++) {
+    let stock = parseInt(stocks[x].querySelector('.qty-available').innerHTML.replace(',', ''));
+    let sold = parseInt(stocks[x].querySelector('.qty-sold').innerHTML.replace(',', ''));
+    let percent = (sold * 100) / stock;
+    stocks[x].querySelector('.available').style.width = percent + '%';
+}
