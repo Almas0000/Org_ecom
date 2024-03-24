@@ -97,10 +97,32 @@ var productBig = new Swiper(".big-image", {
   },
 });
 //stock products bar width percentage
-var stocks = document.querySelectorAll('.stock.mini-text');
+var stocks = document.querySelectorAll(".stock.mini-text");
 for (let x = 0; x < stocks.length; x++) {
-    let stock = parseInt(stocks[x].querySelector('.qty-available').innerHTML.replace(',', ''));
-    let sold = parseInt(stocks[x].querySelector('.qty-sold').innerHTML.replace(',', ''));
-    let percent = (sold * 100) / stock;
-    stocks[x].querySelector('.available').style.width = percent + '%';
+  let stock = parseInt(
+    stocks[x].querySelector(".qty-available").innerHTML.replace(",", "")
+  );
+  let sold = parseInt(
+    stocks[x].querySelector(".qty-sold").innerHTML.replace(",", "")
+  );
+  let percent = (sold * 100) / stock;
+  stocks[x].querySelector(".available").style.width = percent + "%";
 }
+//show cart on click
+const divtoShow = ".mini-cart";
+const divPopup = document.querySelector(divtoShow);
+const divTrigger = document.querySelector(".cart-trigger");
+divTrigger.addEventListener("click", () => {
+  setTimeout(() => {
+    if (!divPopup.classList.contains("show")) {
+      divPopup.classList.add("show");
+    }
+  }, 250);
+});
+//close by click outside
+document.addEventListener("click", (e) => {
+  const isClosest = e.target.closest(divtoShow);
+  if (!isClosest && divPopup.classList.contains("show")) {
+    divPopup.classList.remove("show");
+  }
+});
