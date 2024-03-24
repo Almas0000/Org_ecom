@@ -1309,7 +1309,7 @@ form.search button:hover {
   margin: 0;
   cursor: pointer;
 }
-.products .variant input {
+:where(.products .variant, .filter-block:not(.pricing)) input {
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
   position: absolute;
@@ -1586,6 +1586,14 @@ form label {
 /* ----------------
  * 10. Page category
  * --------------- */
+.single-category .holder {
+  display: flex;
+  flex-direction: column;
+}
+.single-category .sidebar,
+.single-category .section {
+  flex: 0 0 100%;
+}
 /* ----------------
  * 10. Page category
  *  a. slidbar product filter
@@ -1602,7 +1610,107 @@ form label {
   margin-bottom: 0.5em;
 }
 
+.filter-block li {
+  display: flex;
+  font-size: 0.9em;
+  position: relative;
+  line-height: 2;
+}
+.filter-block label .checked {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  line-height: 0;
+  display: inline-block;
+  border: 2px solid var(--secondary-dark-color);
+  vertical-align: text-top;
+  margin: 0 7px 0 0;
+  cursor: pointer;
+}
+.filter-block label .checked::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--secondary-dark-color);
+  top: 2px;
+  left: 2px;
+  opacity: 0;
+}
+.filter-block input:checked + label .checked::before {
+  opacity: 1;
+}
+.filter-block li .count {
+  margin-left: auto;
+  color: var(--light-text-color);
+}
 
+/* :where(.products .variant, .filter-block:not(.pricing)) input {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  These styles is already written in on top
+} */
+.bycolor label[for="colight"]::before {
+  background-color: var(--border-color);
+}
+.bycolor label[for="cored"]::before {
+  background-color: var(--primary-color);
+}
+.bycolor input:checked + label {
+  background-color: transparent;
+  border: 2px solid var(--dark-color);
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  width: var(--percent100);
+}
+input[type="range"]:focus {
+  outline: 0;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: var(--percent100);
+  height: 5px;
+  cursor: pointer;
+  background: var(--border-color);
+  box-shadow: none;
+  border: 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  appearance: none;
+  height: 18px;
+  width: 14px;
+  background: var(--primary-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+.byprice .price-range {
+  display: flex;
+  justify-content: space-between;
+  color: var(--light-text-color);
+  margin-top: 0.5em;
+}
+/* ----------------
+ * 10. Page category
+ *  b. Head & product block
+   --------------- */
+.cat-description p {
+  font-weight: var(--fw3);
+  font-size: 0.9em;
+}
+.cat-navigation {
+  font-size: 0.85em;
+  margin: 2em 0;
+  justify-content: flex-end;
+}
+.cat-navigation div {
+  position: relative;
+}
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
   .products.main .item {
@@ -1643,7 +1751,7 @@ form label {
     top: 2em;
   }
 }
-@media screen and (min-width: 922px) {
+@media screen and (min-width: 800px) {
   .container {
     padding: 0 2em;
   }
@@ -1834,5 +1942,18 @@ form label {
   }
   .products.one .flexwrap > .row:last-child > .item {
     padding-left: 2em;
+  }
+  /* Page Category */
+  .single-category .holder {
+    flex-direction: row;
+  }
+  .single-category .sidebar {
+    flex: 1 0 25%;
+  }
+  .single-category .section {
+    flex: 1 0 75%;
+  }
+  .single-category .sidebar .filter {
+    padding-right: 1.5em;
   }
 }
