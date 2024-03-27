@@ -1790,7 +1790,7 @@ input[type="range"]::-webkit-slider-thumb {
   visibility: visible;
   opacity: 1;
 }
-.mini-cart .products img {
+:is(.mini-cart, .products.cart) .thumbnail img {
   transform: none;
 }
 .mini-cart ul :where(li, .price) {
@@ -1816,7 +1816,7 @@ input[type="range"]::-webkit-slider-thumb {
   max-height: 450px;
   overflow: auto;
 }
-.mini-cart .thumbnail {
+:where(.mini-cart, .products.cart) .thumbnail {
   position: relative;
   width: 80px;
   height: 80px;
@@ -1856,13 +1856,51 @@ input[type="range"]::-webkit-slider-thumb {
   visibility: visible;
   opacity: 1;
   position: fixed;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   max-width: 400px;
   width: 90%;
-  
 }
-
+/* ----------------
+ * 12. Cart page
+   --------------- */
+.products.cart form {
+  width: var(--percent100);
+}
+.products.cart table thead th {
+  vertical-align: middle;
+  background-color: var(--light-bg-color);
+}
+.products.cart table :where(th, td) {
+  padding: 2em 1em;
+  text-align: center;
+}
+.products.cart table :where(th, td):first-child {
+  text-align: left;
+  padding-left: 2em;
+}
+.products.cart table tbody td :first-child {
+  padding-left: 0;
+}
+.products.cart table td :where(.content, .qty-control, p) {
+  margin: 0;
+  padding: 0;
+}
+.products.cart .qty-control :where(button, input) {
+  width: 32px;
+  height: 32px;
+  padding: 0.25em;
+  text-align: center;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+}
+.products.cart .qty-control button {
+  cursor: pointer;
+}
+.products.cart tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
 /* 15. Responsive */
 @media screen and (min-width: 481px) {
   .products.main .item {
@@ -2117,5 +2155,14 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .single-category .products.main .item {
     flex: 0 0 33%;
+  }
+  /* cart page */
+  .products.cart .form-cart {
+    width: 66%;
+  }
+  .products.cart .cart-summary {
+    width: 34%;
+    padding-left: 2em;
+    margin-top: 0;
   }
 }
