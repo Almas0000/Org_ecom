@@ -730,7 +730,109 @@
                     </div>
                   </form>
                   <div class="cart-summary styled">
-                    
+                    <div class="item">
+                      <div class="coupon">
+                        <input type="text" placeholder="Enter coupone" />
+                        <button class="button">Apply</button>
+                      </div>
+                      <div class="shipping-rate collapse">
+                        <div class="has-child expand">
+                          <a href="#" class="icon-small"
+                            >Estimated Shipping and Tax</a
+                          >
+                          <div class="content">
+                            <div class="countries">
+                              <form action="#">
+                                <label for="country">Country</label>
+                                <select name="country" id="country">
+                                  <option value=""></option>
+                                  <option value="1">Afganistan</option>
+                                  <option value="2">Albania</option>
+                                  <option value="4">American Samoa</option>
+                                  <option value="3" selected="selected">
+                                    Algeria
+                                  </option>
+                                  <option value="5">Andorra</option>
+                                </select>
+                              </form>
+                            </div>
+                            <div class="states">
+                              <form action="#">
+                                <label for="state">State/Province</label>
+                                <select name="state" id="state">
+                                  <option value="">
+                                    Select a region , state or province
+                                  </option>
+                                  <option value="1">Kansas</option>
+                                  <option value="2">Alaska</option>
+                                  <option value="4">Arizona</option>
+                                  <option value="4">Other</option>
+                                </select>
+                              </form>
+                            </div>
+                            <div class="postal-code">
+                              <form action="#">
+                                <label for="postal">Zip/Postal Code</label>
+                                <input
+                                  type="number"
+                                  name="postal"
+                                  id="postal"
+                                />
+                              </form>
+                            </div>
+                            <div class="rate-options variant">
+                              <form action="#">
+                                <p>
+                                  <span>Flat: $5.00</span>
+                                  <input
+                                    type="radio"
+                                    name="rate-options"
+                                    id="flat"
+                                    checked
+                                  />
+                                  <label for="flat" class="circle"></label>
+                                </p>
+                                <p>
+                                  <span>Best: $0.00</span>
+                                  <input
+                                    type="radio"
+                                    name="rate-options"
+                                    id="Best"
+                                    checked
+                                  />
+                                  <label for="Best" class="circle"></label>
+                                </p>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart-total">
+                        <table>
+                          <tbody>
+                            <tr>
+                              <th>Subtotal</th>
+                              <td>$540.00</td>
+                            </tr>
+                            <tr>
+                              <th>Discount</th>
+                              <td>$0.00</td>
+                            </tr>
+                            <tr>
+                              <th>
+                                Shipping <span class="mini-text">(Flat)</span>
+                              </th>
+                              <td>$0.00</td>
+                            </tr>
+                            <tr class="grand-total">
+                              <th>Total</th>
+                              <td><strong>$540.00</strong></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <a href="checkout.html" class="secondary-button">Checkout</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
