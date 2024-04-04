@@ -126,3 +126,19 @@ document.addEventListener("click", (e) => {
     divPopup.classList.remove("show");
   }
 });
+// show modal  on load
+window.onload = function () {
+  document.querySelector('.site').classList.toggle('showmodal');
+}
+document.querySelector('.modalclose').addEventListener('click', function(){
+  document.querySelector('.site').classList.remove('showmodal');
+});
+
+// On click back to top
+const goTopButton = document.querySelector(".backtotop");
+goTopButton.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
